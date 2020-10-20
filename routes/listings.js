@@ -56,6 +56,7 @@ router.post(
     validateWith(schema),
     validateCategoryId,
     imageResize,
+    auth,
   ],
 
   async (req, res) => {
