@@ -54,7 +54,7 @@ router.post("/", [auth, validateWith(schema)], async (req, res) => {
   const { expoPushToken } = targetUser;
 
   if (Expo.isExpoPushToken(expoPushToken))
-    await sendPushNotification(expoPushToken, message);
+    await sendPushNotification(expoPushToken, message, req.user.name);
 
   res.status(201).send();
 });
